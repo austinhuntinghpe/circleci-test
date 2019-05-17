@@ -29,7 +29,8 @@ jobs:
       - run: go test -v ./...
       - run: go build main.go
       - run: ./main
-      - run: echo $CIRCLE_COMPARE_URL
+      - run: echo $CIRCLE_PROJECT_USERNAME
+      - run: echo $CIRCLE_PROJECT_REPONAME
       - run: mkdir -p /tmp/store && mv ./main /tmp/store
       - store_artifacts:
           path: /tmp/store/main
