@@ -31,6 +31,7 @@ jobs:
       - run: ./main
       - run: echo $CIRCLE_PROJECT_USERNAME
       - run: echo $CIRCLE_PROJECT_REPONAME
+      - run: echo $CIRCLE_PULL_REQUEST
       - run: mkdir -p /tmp/store && mv ./main /tmp/store
       - store_artifacts:
           path: /tmp/store/main
