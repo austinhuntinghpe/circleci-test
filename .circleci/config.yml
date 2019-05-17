@@ -20,7 +20,7 @@ jobs:
     #working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
 
     # seems to work fine
-    working_directory: /go/src/github.com/$(echo $CIRCLE_PROJECT_USERNAME)/$(echo $CIRCLE_PROJECT_REPONAME)
+    working_directory: /go/src/github.com/austinhuntinghpe/circleci-test
     steps:
       - checkout
 
