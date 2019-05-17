@@ -20,7 +20,7 @@ jobs:
     #working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
 
     # seems to work fine
-    working_directory: /go/src/github.com/austinhuntinghpe/circleci-test
+    working_directory: /go/src/github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
     steps:
       - checkout
 
@@ -29,9 +29,7 @@ jobs:
       - run: go test -v ./...
       - run: go build main.go
       - run: ./main
-      - run: echo $CIRCLE_PROJECT_USERNAME
-      - run: echo $CIRCLE_PROJECT_REPONAME
-      - run: echo $CIRCLE_PULL_REQUEST
+      - run: echo $CIRCLE_REPOSITORY_URL
       - run: mkdir -p /tmp/store && mv ./main /tmp/store
       - store_artifacts:
           path: /tmp/store/main
